@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O'Reilly Introduction to WebRTC</title>
+  </head>
+
+  <body>
+    <video autoplay></video>
+
+    <script>
+      navigator.getUserMedia =
+        navigator.getUserMedia ||
+        navigator.webkitGetUserMedia ||
+        navigator.mozGetUserMedia;
+
+      var constrains = {
+        audio: true,
+        video: true,
+      };
+
+      var videoArea = document.querySelector('video');
+
+      navigator.getUserMedia(constrains, onSuccess, onError);
+
+      function onSuccess(stream) {
+        console.log('Sucess! we have a stream!');
+        videoArea.src = window.URL.createObjectURL(stream);
+        videoArea.play();
+      }
+
+      function onError(error) {
+        console.log('Error with getUserMedia: ', error);
+      }
+    </script>
+  </body>
+</html>
