@@ -26,7 +26,11 @@
 
       function onSuccess(stream) {
         console.log('Sucess! we have a stream!');
-        videoArea.src = window.URL.createObjectURL(stream);
+        try {
+          videoArea.srcObject = stream;
+        } catch (error) {
+          videoArea.src = window.URL.createObjectURL(stream);
+        }
         videoArea.play();
       }
 
