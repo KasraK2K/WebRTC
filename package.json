@@ -2,6 +2,10 @@
   "name": "intro-webrtc",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "start": "node sever",
+    "start:dev": "nodemon"
+  },
   "dependencies": {
     "express": "4.x",
     "ejs": "3.x"

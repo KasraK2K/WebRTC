@@ -20,12 +20,15 @@
         video: true,
       };
 
+      var screenConstrains = {
+        video: {
+          mediaSource: 'screen',
+        },
+      };
+
       var videoArea = document.querySelector('video');
 
-      navigator.getUserMedia(constrains, onSuccess, onError);
-
       function onSuccess(stream) {
-        console.log('Sucess! we have a stream!');
         try {
           videoArea.srcObject = stream;
         } catch (error) {
@@ -37,6 +40,13 @@
       function onError(error) {
         console.log('Error with getUserMedia: ', error);
       }
+
+      navigator.getUserMedia(constrains, onSuccess, onError);
+
+      /* screen */
+      // navigator.mediaDevices.getUserMedia(screenConstrains, onSuccess, onError).then(stream => {
+      //   videoArea.srcObject = stream;
+      // });
     </script>
   </body>
 </html>
