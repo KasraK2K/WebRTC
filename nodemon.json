@@ -2,5 +2,5 @@
   "watch": ["./**/*"],
   "ignore": [],
   "ext": ".js,.ts,.ejs",
-  "exec": "node server"
+  "exec": "node server.js"
 }
