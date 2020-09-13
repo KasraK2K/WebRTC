@@ -11,9 +11,17 @@
       Video:
       <select id="camera"></select>
     </div>
+    <p>
+      <button id="takeProfilePicture" type="button" autofocus="true">
+        Create Profile Picture
+      </button>
+    </p>
     <br />
-    <video autoplay></video>
+    <video id="videoTag" autoplay></video>
+    <canvas id="profilePicCanvas" style="display: none"></canvas>
+    <div><img id="profilePictureOutput" /></div>
 
+    <script src="getUserMedia.js"></script>
     <script src="stream.js"></script>
   </body>
 </html>
