@@ -3,50 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>O'Reilly Introduction to WebRTC</title>
+    <title>WebRTC</title>
   </head>
 
   <body>
+    <div>
+      Video:
+      <select id="camera"></select>
+    </div>
+    <br />
     <video autoplay></video>
 
-    <script>
-      navigator.getUserMedia =
-        navigator.getUserMedia ||
-        navigator.webkitGetUserMedia ||
-        navigator.mozGetUserMedia;
-
-      var constrains = {
-        audio: true,
-        video: true,
-      };
-
-      var screenConstrains = {
-        video: {
-          mediaSource: 'screen',
-        },
-      };
-
-      var videoArea = document.querySelector('video');
-
-      function onSuccess(stream) {
-        try {
-          videoArea.srcObject = stream;
-        } catch (error) {
-          videoArea.src = window.URL.createObjectURL(stream);
-        }
-        videoArea.play();
-      }
-
-      function onError(error) {
-        console.log('Error with getUserMedia: ', error);
-      }
-
-      navigator.getUserMedia(constrains, onSuccess, onError);
-
-      /* screen */
-      // navigator.mediaDevices.getUserMedia(screenConstrains, onSuccess, onError).then(stream => {
-      //   videoArea.srcObject = stream;
-      // });
-    </script>
+    <script src="stream.js"></script>
   </body>
 </html>
