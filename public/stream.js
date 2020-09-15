@@ -14,7 +14,7 @@ takeProfilePicture.addEventListener(
   false,
 );
 
-var width = 240; // Desire width of the profile picture
+var width = 800; // Desire width of the profile picture
 var height = 0; // Calculated later base on image retio
 var streaming = false; // Useto determine when the video has loaded
 
