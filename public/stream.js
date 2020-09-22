@@ -16,7 +16,7 @@ takeProfilePicture.addEventListener(
 
 var width = 800; // Desire width of the profile picture
 var height = 0; // Calculated later base on image retio
-var streaming = false; // Useto determine when the video has loaded
+var streaming = false; // Use to determine when the video has loaded
 
 videoTag.addEventListener(
   'canplay',

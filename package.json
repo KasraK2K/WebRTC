@@ -9,8 +9,9 @@
     "start:dev": "nodemon"
   },
   "dependencies": {
+    "ejs": "3.x",
     "express": "4.x",
-    "ejs": "3.x"
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

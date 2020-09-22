@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
+const morgan = require('morgan')
 
 // express config
+app.use(morgan('dev'));
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
